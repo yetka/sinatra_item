@@ -29,4 +29,10 @@ class Item
       end
     end
   end
+
+
+  def self.sort()
+    @@list.sort_by{ |item| item.name }
+  end
+
 end

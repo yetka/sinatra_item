@@ -42,12 +42,22 @@ describe("Item") do
 
   describe(".find") do
     it("finds an item based on its id") do
-      item = Item.new("tacos")
-      item.save()
+      item1 = Item.new("tacos")
+      item1.save()
       item2 = Item.new("pizza")
       item2.save()
-      expect(Item.find(1)).to(eq(item))
+      expect(Item.find(1)).to(eq(item1))
       expect(Item.find(2)).to(eq(item2))
+    end
+  end
+
+  describe(".sort") do
+    it("sort the items based on their names") do
+      item1 = Item.new("tacos")
+      item1.save()
+      item2 = Item.new("pizza")
+      item2.save()
+      expect(Item.sort()).to(eq([item2,item1]))
     end
   end
 end

@@ -15,3 +15,8 @@ post('/') do
   @list = Item.all()
   erb(:list)
 end
+
+get('/items/:id') do
+  @item = Item.find(params[:id])
+  erb(:item)
+end

@@ -12,7 +12,7 @@ post('/') do
   name = params["name"]
   item = Item.new(name)
   item.save()
-  @list = Item.all()
+  @list = Item.sort()
   erb(:list)
 end
 
